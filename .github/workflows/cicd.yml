@@ -1,14 +1,11 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
+name: CICD
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -25,12 +22,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v5
+        with:
+          role-to-assume: arn:aws:iam::585412048804:role/GitHubActionsTerraformForEKSFromScratch
+          aws-region: us-east-1
+          role-session-name: login-session-by-github-actions
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Run terraform code
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          aws sts get-caller-identity
+          terraform plan
