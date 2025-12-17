@@ -36,8 +36,10 @@ jobs:
           role-session-name: login-session-by-github-actions
 
       # Runs a set of commands using the runners shell
-      - name: Run terraform code
+      - name: Print AWS Identity
         run: |
           aws sts get-caller-identity
+
+      - name: Terraform commands
+        run: |
           terraform init
-          terraform plan
