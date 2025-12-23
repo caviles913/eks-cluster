@@ -43,7 +43,7 @@ jobs:
     #       aws sts get-caller-identity..
 
       - name: Initialize Terraform
-        run: terraform init -backend-config="${{ vars.S3_BUCKET }}"
+        run: terraform init -backend-config="bucket=${{ vars.S3_BUCKET }}"
       
       - name: Terraform Code Check
         run: terraform fmt -check -recursive
