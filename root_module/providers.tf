@@ -11,12 +11,11 @@ terraform {
       version = ">= 5.49"
     }
   }
+  backend "s3" {
+    key     = "eks-cluster/terraform.tfstate"
+    region  = "us-east-1"
+    encrypt = true
+  }
 }
 
-backend "s3" {
-  bucket         = "my-eks-terraform-state-bucket"
-  key            = "eks-cluster/terraform.tfstate"
-  region         = var.root_aws_region
-  dynamodb_table = "eks-terraform-lock-table"
-  encrypt        = true
-}
+

@@ -14,7 +14,7 @@ variable "root_aws_zone1" {
 }
 variable "root_aws_zone2" {
   type = string
-} 
+}
 variable "root_aws_eks_name" {
   type = string
 }

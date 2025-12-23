@@ -4,7 +4,7 @@ name: CICD
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main","feature/*" , "staging"]
+    branches: [ "main","feature/*" , "staging" ]
 
 
   # Allows you to run this workflow manually from the Actions tab
@@ -16,7 +16,7 @@ permissions:
 jobs:
    # This workflow contains a single job called "build"
   build:
-    # the environment name
+    # the environment name.
     environment: ${{ (github.ref == 'refs/heads/main' && 'production') || (github.ref == 'refs/heads/staging' && 'staging') || 'dev' }}
     # The type of runner that the job will run on
     runs-on: ubuntu-22.04
@@ -40,10 +40,10 @@ jobs:
       # Runs a set of commands using the runners shell
     #   - name: Print AWS Identity
     #     run: |
-    #       aws sts get-caller-identity.
+    #       aws sts get-caller-identity..
 
       - name: Initialize Terraform
-        run: terraform init -backend-config="bucket=${{ vars.TF_STATE_BUCKET }}"
+        run: terraform init -backend-config="bucket=${{ vars.S3_BUCKET }}"
       
       - name: Terraform Code Check
         run: terraform fmt -check -recursive
