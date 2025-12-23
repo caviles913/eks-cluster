@@ -36,7 +36,7 @@ resource "aws_subnet" "public_zone1" {
   tags = {
     Name                                                   = "${local.env}-public-${local.zone1}" ####staging-public-us-east-1a
     "kubernetes.io/role/elb"                               = "1"
-    "kubernetes.io/cluster/${local.env}-${local.eks_name}" = "owned"
+    "kubernetes.io/cluster/${local.eks_name}" = "owned"
   }
 }
 
@@ -49,6 +49,6 @@ resource "aws_subnet" "public_zone2" {
   tags = {
     Name                                                   = "${local.env}-public-${local.zone2}" ####staging-public-us-east-1b
     "kubernetes.io/role/elb"                               = "1"
-    "kubernetes.io/cluster/${local.env}-${local.eks_name}" = "owned"
+    "kubernetes.io/cluster/${local.eks_name}" = "owned"
   }
 }
