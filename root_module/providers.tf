@@ -19,10 +19,3 @@ backend "s3" {
   dynamodb_table = "eks-terraform-lock-table"
   encrypt        = true
 }
-backend "s3" {
-  bucket         = "my-eks-terraform-state-bucket"
-  key            = "eks-cluster/terraform.tfstate"
-  region         = var.root_aws_region
-  dynamodb_table = "eks-terraform-lock-table"
-  encrypt        = true
-}
