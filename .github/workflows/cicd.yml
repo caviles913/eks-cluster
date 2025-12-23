@@ -45,5 +45,5 @@ jobs:
       - name: Terraform commands
         run: |
             terraform init
-            terraform plan -input=false -var-file=ENVIRONMENT_STAGE.tfvars
+            terraform plan -input=false -var-file=${{vars.ENVIRONMENT_STAGE}}.tfvars
         # terraform apply -auto-approve -var-file=ENVIRONMENT_STAGE.tfvars
