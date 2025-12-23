@@ -1,0 +1,7 @@
+root_vpc_cidr_block = "10.0.0.0/16"
+root_environment    = "dev"
+root_aws_region     = "us-east-1"
+root_aws_zone1 = "us-east-1a"
+root_aws_zone2 = "us-east-1b"
+root_aws_eks_name   = "dev-cluster"
+root_aws_eks_version= "1.33"

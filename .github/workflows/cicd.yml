@@ -16,6 +16,8 @@ permissions:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    # the environment name
+    environment: dev
     # The type of runner that the job will run on
     runs-on: ubuntu-22.04
 
@@ -31,7 +33,7 @@ jobs:
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v5
         with:
-          role-to-assume: arn:aws:iam::585412048804:role/GitHubActionsTerraformForEKSFromScratch
+          role-to-assume: ${{vars.IAM_ROLE}}
           aws-region: us-east-1
           role-session-name: login-session-by-github-actions
 
@@ -42,5 +44,6 @@ jobs:
 
       - name: Terraform commands
         run: |
-          terraform init
-          terraform plan
+            terraform init
+            terraform plan -input=false -var-file=ENVIRONMENT_STAGE.tfvars
+        # terraform apply -auto-approve -var-file=ENVIRONMENT_STAGE.tfvars
