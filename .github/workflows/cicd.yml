@@ -4,11 +4,7 @@ name: CICD
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-<<<<<<< HEAD
     branches: [ "main","feature/*" , "staging" ]
-=======
-    branches: [ "main","feature/*" , "staging"]
->>>>>>> staging
 
 
   # Allows you to run this workflow manually from the Actions tab
