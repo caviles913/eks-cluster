@@ -4,7 +4,7 @@ name: CICD
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main","feature/*" ]
+    branches: [ "main","feature/*" , "staging"]
 
 
   # Allows you to run this workflow manually from the Actions tab
@@ -16,7 +16,7 @@ permissions:
 jobs:
    # This workflow contains a single job called "build"
   build:
-    # the environment name.
+    # the environment name..
     environment: ${{ (github.ref == 'refs/heads/main' && 'production') || (github.ref == 'refs/heads/staging' && 'staging') || 'dev' }}
     # The type of runner that the job will run on
     runs-on: ubuntu-22.04
