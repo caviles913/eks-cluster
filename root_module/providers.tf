@@ -12,3 +12,10 @@ terraform {
     }
   }
 }
+
+backend "s3" {
+  key            = "eks-cluster/terraform.tfstate"
+  region         = var.root_aws_region
+  dynamodb_table = "eks-terraform-lock-table"
+  encrypt        = true
+}
