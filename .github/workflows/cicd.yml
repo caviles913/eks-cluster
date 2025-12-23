@@ -4,7 +4,11 @@ name: CICD
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
+<<<<<<< HEAD
     branches: [ "main","feature/*" , "staging" ]
+=======
+    branches: [ "main","feature/*" , "staging"]
+>>>>>>> staging
 
 
   # Allows you to run this workflow manually from the Actions tab
@@ -40,10 +44,13 @@ jobs:
       # Runs a set of commands using the runners shell
     #   - name: Print AWS Identity
     #     run: |
-    #       aws sts get-caller-identity
+    #       aws sts get-caller-identity.
 
-      - name: Terraform commands
-        run: |
-            terraform init
-            terraform plan -input=false -var-file=${{vars.ENVIRONMENT_STAGE}}.tfvars
-        # terraform apply -auto-approve -var-file=ENVIRONMENT_STAGE.tfvars
+      - name: Initialize Terraform
+        run: terraform init -backend-config="bucket=${{ vars.TF_STATE_BUCKET }}"
+      
+      - name: Terraform Code Check
+        run: terraform fmt -check -recursive
+
+      - name: Plan Infrastructure
+        run: terraform plan -input=false -var-file=${{ vars.ENVIRONMENT_STAGE }}.tfvars   
