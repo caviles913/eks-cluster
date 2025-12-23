@@ -42,8 +42,11 @@ jobs:
     #     run: |
     #       aws sts get-caller-identity
 
-      - name: Terraform commands
-        run: |
-            terraform init
-            terraform plan -input=false -var-file=${{vars.ENVIRONMENT_STAGE}}.tfvars
-        # terraform apply -auto-approve -var-file=ENVIRONMENT_STAGE.tfvars
+      - name: Initialize Terraform
+        run: terraform init -backend-config="bucket=${{ vars.TF_STATE_BUCKET }}"
+      
+      - name: Terraform Code Check
+        run: terraform fmt -check -recursive
+
+      - name: Plan Infrastructure
+        run: terraform plan -input=false -var-file=${{ vars.ENVIRONMENT_STAGE }}.tfvars   
