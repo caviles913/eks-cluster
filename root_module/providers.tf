@@ -1,5 +1,5 @@
 provider "aws" {
-  region = local.region
+  region = vars.root_aws_region
 }
 
 terraform {
