@@ -1,14 +1,14 @@
 
 
 resource "aws_eks_cluster" "example" {
-  name = "example"
+  name = local.eks_cluster_name
 
   access_config {
     authentication_mode = "API"
   }
 
   role_arn = aws_iam_role.cluster.arn
-  version  = "1.31"
+  version  = local.eks_cluster_version
 
   vpc_config {
     subnet_ids = [

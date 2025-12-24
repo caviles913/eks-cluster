@@ -19,6 +19,6 @@ variable "root_aws_eks_name" {
   type = string
 }
 
-variable "root_aws_eks_version" {
+variable "root_eks_version" {
   type = string
 }
