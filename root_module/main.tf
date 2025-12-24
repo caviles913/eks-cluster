@@ -15,4 +15,5 @@ module "eks_cluster" {
   source              = "../eks"
   aws_cluster_name    = var.root_aws_eks_name
   aws_cluster_version = var.root_aws_eks_version
+  subnet_ids = module.main_vpc.public_subnet_ids
 }

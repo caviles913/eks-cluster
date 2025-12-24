@@ -7,3 +7,7 @@ variable "aws_cluster_name" {
 variable "aws_cluster_version" {
   type = string
 }
+
+variable "subnet_ids" {
+  type = list(string)
+}
