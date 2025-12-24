@@ -7,6 +7,8 @@ module "main_vpc" {
   aws_region     = var.root_aws_region
   aws_zone1      = var.root_aws_zone1
   aws_zone2      = var.root_aws_zone2
+  aws_eks_name = module.eks_cluster.eks_cluster_name
+  aws_eks_version = module.eks_cluster.eks_cluster_version
 
 }
 

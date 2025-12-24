@@ -17,3 +17,11 @@ variable "aws_zone1" {
 variable "aws_zone2" {
   type = string
 }
+
+variable "aws_eks_name" {
+  type = string
+}
+
+variable "aws_eks_version" {
+  type = string
+}
