@@ -14,5 +14,5 @@ module "main_vpc" {
 module "eks_cluster" {
   source              = "../eks"
   aws_cluster_name    = var.root_aws_eks_name
-  aws_cluster_version = var.root_eks_version
+  aws_cluster_version = var.root_aws_eks_version
 }
