@@ -15,7 +15,7 @@ permissions:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
    # This workflow contains a single job called "build"
-  build:
+  Building_EKS_Cluster:
     # the environment name.
     environment: ${{ (github.ref == 'refs/heads/main' && 'production') || (github.ref == 'refs/heads/staging' && 'staging') || 'dev' }}
     # The type of runner that the job will run on

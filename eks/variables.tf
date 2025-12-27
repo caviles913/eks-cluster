@@ -21,5 +21,5 @@ variable "aws_node_group_role_name" {
 }
 
 variable "ec2_types" {
-  type = list()
+  type = list(string)
 }
