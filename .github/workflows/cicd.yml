@@ -50,3 +50,6 @@ jobs:
 
       - name: Plan Infrastructure
         run: terraform plan -input=false -var-file=${{ vars.ENVIRONMENT_STAGE }}.tfvars   
+
+      - name: Apply Infrastructure
+        run: terraform apply -input=false -var-file=${{ vars.ENVIRONMENT_STAGE }}.tfvars 
