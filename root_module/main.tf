@@ -14,11 +14,11 @@ module "main_vpc" {
 
 
 module "eks_cluster" {
-  source              = "../eks"
-  aws_cluster_name    = var.root_aws_eks_name
-  aws_cluster_version = var.root_aws_eks_version
-  subnet_ids          = module.main_vpc.public_subnet_ids
-  aws_node_group_name = var.root_aws_node_group_name
+  source                   = "../eks"
+  aws_cluster_name         = var.root_aws_eks_name
+  aws_cluster_version      = var.root_aws_eks_version
+  subnet_ids               = module.main_vpc.public_subnet_ids
+  aws_node_group_name      = var.root_aws_node_group_name
   aws_node_group_role_name = var.root_aws_node_group_role_name
-  ec2_types          = var.root_ec2_instance_types
+  ec2_types                = var.root_ec2_instance_types
 }

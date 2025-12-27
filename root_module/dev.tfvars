@@ -7,6 +7,6 @@ root_aws_eks_name    = "dev-cluster"
 root_aws_eks_version = "1.33"
 
 
-root_aws_node_group_name = "dev-node-group"
+root_aws_node_group_name      = "dev-node-group"
 root_aws_node_group_role_name = "dev-node-group-role"
-root_ec2_instance_types = ["t3.medium", "t3.large"]
+root_ec2_instance_types       = ["t3.medium", "t3.large"]

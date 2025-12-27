@@ -3,7 +3,7 @@ resource "aws_eks_node_group" "worker_nodes" {
   node_group_name = local.worker_node_group_name
   node_role_arn   = aws_iam_role.worker_node_role.arn
   subnet_ids      = var.subnet_ids
-   instance_types = var.ec2_types
+  instance_types  = var.ec2_types
 
   scaling_config {
     desired_size = 2
