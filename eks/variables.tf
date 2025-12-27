@@ -11,3 +11,11 @@ variable "aws_cluster_version" {
 variable "subnet_ids" {
   type = list(string)
 }
+
+variable "aws_node_group_name" {
+  type = string
+}
+
+variable "aws_node_group_role_name" {
+  type = string
+}
