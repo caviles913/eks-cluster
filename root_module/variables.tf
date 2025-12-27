@@ -22,3 +22,14 @@ variable "root_aws_eks_name" {
 variable "root_aws_eks_version" {
   type = string
 }
+
+variable "root_aws_node_group_name" {
+  type = string
+}
+
+variable "root_aws_node_group_role_name" {
+  type = string
+}
+variable "root_ec2_instance_types" {
+  type = list(string)
+}
