@@ -60,4 +60,4 @@ jobs:
       - name: Verify EKS Cluster Nodes
         run: |
           aws eks --region us-east-1 update-kubeconfig --name ${{ vars.EKS_CLUSTER_NAME }}
-          kubectl get nodes
+          kubectl get pods --all-namespaces
