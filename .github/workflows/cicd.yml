@@ -61,3 +61,4 @@ jobs:
         run: |
           aws eks --region us-east-1 update-kubeconfig --name ${{ vars.EKS_CLUSTER_NAME }}
           kubectl get pods --all-namespaces
+          kubectl get nodes
