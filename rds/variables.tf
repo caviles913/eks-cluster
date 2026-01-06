@@ -19,7 +19,7 @@ variable "allowed_cidr" {
 }
 
 variable "instance_class" {
-  type    = string
+  type = string
 }
 
 variable "allocated_storage" {

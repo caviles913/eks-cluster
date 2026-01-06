@@ -24,13 +24,13 @@ module "eks_cluster" {
 }
 
 module "rds_instance" {
-  source     = "../rds"
-  subnet_ids = module.main_vpc.private_subnet_ids
+  source                 = "../rds"
+  subnet_ids             = module.main_vpc.private_subnet_ids
   db_security_group_name = var.root_db_security_group_name
-  db_identifier = var.root_db_instance_identifier
-  instance_class = var.root_db_instance_class
-  allocated_storage = var.root_allocated_storage
-  db_name = var.root_db_name
-  db_username = var.root_db_username
-  allowed_cidr = module.main_vpc.vpc_cidr_block
+  db_identifier          = var.root_db_instance_identifier
+  instance_class         = var.root_db_instance_class
+  allocated_storage      = var.root_allocated_storage
+  db_name                = var.root_db_name
+  db_username            = var.root_db_username
+  allowed_cidr           = module.main_vpc.vpc_cidr_block
 }

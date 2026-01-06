@@ -15,16 +15,16 @@ resource "aws_db_instance" "mysql8" {
 
   db_name  = var.db_name
   username = var.db_username
-#   password = var.db_password
+  #   password = var.db_password
   manage_master_user_password = true
-  port = 3306
+  port                        = 3306
 
   db_subnet_group_name   = aws_db_subnet_group.db.name
   vpc_security_group_ids = [aws_security_group.db.id]
   publicly_accessible    = true
 
   # Sensible defaults for a demo; adjust for production
-  storage_encrypted      = true
+  storage_encrypted       = true
   backup_retention_period = 0
   skip_final_snapshot     = true
   deletion_protection     = false
