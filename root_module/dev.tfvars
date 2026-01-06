@@ -5,7 +5,9 @@ root_aws_zone1       = "us-east-1a"
 root_aws_zone2       = "us-east-1b"
 root_aws_eks_name    = "dev-cluster"
 root_aws_eks_version = "1.33"
-
+root_iam_user_name = "nonRootUser"
+root_access_level  = "cluster-admin"
+root_namespaces    = []
 
 root_aws_node_group_name      = "dev-node-group"
 root_aws_node_group_role_name = "dev-node-group-role"

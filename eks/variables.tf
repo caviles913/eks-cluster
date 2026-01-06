@@ -23,3 +23,21 @@ variable "aws_node_group_role_name" {
 variable "ec2_types" {
   type = list(string)
 }
+
+
+
+##########ACCESS LEVEL VARIABLE##########
+variable "iam_user_name" {
+  type = string
+}
+
+variable "access_level" {
+  type    = string
+  default = "view"
+}
+
+# Leave empty for cluster-wide access, or set namespaces for namespace-scoped access
+variable "namespaces" {
+  type    = list(string)
+  default = []
+}

@@ -21,6 +21,9 @@ module "eks_cluster" {
   aws_node_group_name      = var.root_aws_node_group_name
   aws_node_group_role_name = var.root_aws_node_group_role_name
   ec2_types                = var.root_ec2_instance_types
+  iam_user_name            = var.root_iam_user_name
+  access_level             = var.root_access_level
+  namespaces               = var.root_namespaces
 }
 
 module "rds_instance" {

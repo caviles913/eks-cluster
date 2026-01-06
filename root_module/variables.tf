@@ -33,6 +33,18 @@ variable "root_aws_node_group_role_name" {
 variable "root_ec2_instance_types" {
   type = list(string)
 }
+
+variable "root_iam_user_name" {
+  type = string
+}
+variable "root_access_level" {
+  type = string
+}
+
+variable "root_namespaces" {
+  type = list(string)
+}
+
 #############################
 variable "root_db_instance_class" {
   type = string
