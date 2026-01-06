@@ -14,6 +14,6 @@ root_ec2_instance_types       = ["t3.medium", "t2.medium"]
 root_db_instance_class      = "db.t3.micro"
 root_allocated_storage      = "20"
 root_db_instance_identifier = "reviews-app-db-dev"
-root_db_name                = "reviews-app-db-name"
+root_db_name                = "reviewsdb"
 root_db_username            = "admin"
 root_db_security_group_name = "reviews-app-db-sg"
