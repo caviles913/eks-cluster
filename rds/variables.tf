@@ -37,3 +37,7 @@ variable "db_security_group_name" {
 variable "db_identifier" {
   type = string
 }
+
+variable "vpc_id" {
+  type = string
+}

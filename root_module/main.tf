@@ -33,4 +33,5 @@ module "rds_instance" {
   db_name                = var.root_db_name
   db_username            = var.root_db_username
   allowed_cidr           = module.main_vpc.vpc_cidr_block
+  vpc_id                 = module.main_vpc.vpc_id
 }

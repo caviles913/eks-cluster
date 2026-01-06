@@ -1,7 +1,7 @@
 resource "aws_security_group" "db" {
   name        = var.db_security_group_name
   description = "Allow MySQL from allowed CIDR"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = var.vpc_id
 
   ingress {
     description = "MySQL"
