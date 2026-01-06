@@ -10,3 +10,10 @@ root_aws_eks_version = "1.33"
 root_aws_node_group_name      = "dev-node-group"
 root_aws_node_group_role_name = "dev-node-group-role"
 root_ec2_instance_types       = ["t3.medium", "t2.medium"]
+
+root_db_instance_class = "db.t3.micro"
+root_allocated_storage = "20"
+root_db_instance_identifier = "reviews_app_db_dev"
+root_db_name = "reviews_app_db_dev"
+root_db_username = "admin"
+root_db_security_group_name = "reviews-app-db-sg"
