@@ -23,8 +23,8 @@ module "eks_cluster" {
   ec2_types                = var.root_ec2_instance_types
   # iam_user_name            = var.root_iam_user_name
   access_principals = var.root_eks_access_principals
-  access_level      = var.root_access_level
-  namespaces        = var.root_namespaces
+  # access_level      = var.root_access_level
+  # namespaces        = var.root_namespaces
 }
 
 module "rds_instance" {

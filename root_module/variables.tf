@@ -49,9 +49,9 @@ variable "root_eks_access_principals" {
 #   type = string
 # }
 
-variable "root_namespaces" {
-  type = list(string)
-}
+# variable "root_namespaces" {
+#   type = list(string)
+# }
 
 #############################
 variable "root_db_instance_class" {
