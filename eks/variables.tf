@@ -27,8 +27,16 @@ variable "ec2_types" {
 
 
 ##########ACCESS LEVEL VARIABLE##########
-variable "iam_user_name" {
-  type = string
+# variable "iam_user_name" {
+#   type = string
+# }
+
+variable "access_principals" {
+  type = list(object({
+    principal_arn = string
+    policy_arn    = string
+    namespaces    = optional(list(string), [])
+  }))
 }
 
 variable "access_level" {

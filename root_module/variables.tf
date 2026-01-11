@@ -34,8 +34,16 @@ variable "root_ec2_instance_types" {
   type = list(string)
 }
 
-variable "root_iam_user_name" {
-  type = string
+# variable "root_iam_user_name" {
+#   type = string
+# }
+
+variable "root_eks_access_principals" {
+  type = list(object({
+    principal_arn = string
+    policy_arn    = string
+    namespaces    = optional(list(string), [])
+  }))
 }
 variable "root_access_level" {
   type = string

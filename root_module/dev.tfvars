@@ -5,8 +5,19 @@ root_aws_zone1       = "us-east-1a"
 root_aws_zone2       = "us-east-1b"
 root_aws_eks_name    = "dev-cluster"
 root_aws_eks_version = "1.33"
-root_iam_user_name   = "nonRootAdmin"
-root_access_level    = "cluster-admin"
+# root_iam_user_name   = "nonRootAdmin"
+# root_access_level    = "cluster-admin"
+access_principals = [
+  {
+    principal_arn = "arn:aws:iam::585412048804:user/nonRootAdmin"
+    access_level  = "cluster-admin"
+  },
+  {
+    principal_arn = "arn:aws:iam::585412048804:role/github-actions-application-cicd-iam-role-dev"
+    access_level  = "cluster-admin"
+    # namespaces    = ["default", "apps"]
+  }
+]
 root_namespaces      = []
 
 root_aws_node_group_name      = "dev-node-group"
