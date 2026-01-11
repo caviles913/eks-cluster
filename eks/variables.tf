@@ -34,7 +34,7 @@ variable "ec2_types" {
 variable "access_principals" {
   type = list(object({
     principal_arn = string
-    access_level  = string               # cluster-admin | admin | view
+    access_level  = string # cluster-admin | admin | view
     namespaces    = optional(list(string), [])
   }))
 }

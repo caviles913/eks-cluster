@@ -14,6 +14,6 @@ output "principal_arn" {
   value = data.aws_iam_user.this.arn
 }
 
-output "policy_arn" {
-  value = local.policy_arn
-}
+# output "policy_arn" {
+#   value = local.policy_arn
+# }

@@ -1,10 +1,4 @@
-locals {
-  # Convert list(object) -> map so we can use for_each
-  access_principals_map = {
-    for p in var.access_principals :
-    p.principal_arn => p
-  }
-}
+
 
 resource "aws_eks_access_entry" "principal" {
   for_each = local.access_principals_map
