@@ -1,13 +1,3 @@
-variable "access_principals" {
-  description = "EKS access principals to grant access (role/user ARNs)."
-  type = list(object({
-    principal_arn = string
-    policy_arn    = string
-    namespaces    = optional(list(string), [])
-  }))
-}
-
-
 resource "aws_eks_access_entry" "principal" {
   for_each = var.access_principals
   cluster_name  = local.eks_cluster_name
@@ -25,5 +15,5 @@ resource "aws_eks_access_policy_association" "principal" {
     namespaces = length(each.value.namespaces) > 0 ? each.value.namespaces : null
   }
 
-  depends_on = [aws_eks_access_entry.principal[each.key]]
+  # depends_on = [aws_eks_access_entry.principal[each.key]]
 }
