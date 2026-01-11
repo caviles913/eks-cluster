@@ -7,7 +7,7 @@ root_aws_eks_name    = "dev-cluster"
 root_aws_eks_version = "1.33"
 # root_iam_user_name   = "nonRootAdmin"
 # root_access_level    = "cluster-admin"
-access_principals = [
+root_eks_access_principals = [
   {
     principal_arn = "arn:aws:iam::585412048804:user/nonRootAdmin"
     access_level  = "cluster-admin"
