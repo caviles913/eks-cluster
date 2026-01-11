@@ -9,4 +9,12 @@ locals {
     "view"          = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSViewPolicy"
   }
   policy_arn = local.policy_arn_by_level[var.access_level]
+
+  access_principals_map = {
+    for p in var.access_principals :
+    p.principal_arn => {
+      principal_arn = p.principal_arn
+      policy_arn    = local.policy_arn_by_level[p.access_level]
+      namespaces    = try(p.namespaces, [])
+    }
 }
