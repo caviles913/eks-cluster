@@ -51,11 +51,11 @@ jobs:
       - name: Plan Infrastructure
         run: terraform plan -input=false -var-file=${{ vars.ENVIRONMENT_STAGE }}.tfvars   
 
-      # - name: Apply Infrastructure
-      #   run: terraform apply -auto-approve -input=false -var-file=${{ vars.ENVIRONMENT_STAGE }}.tfvars 
+      - name: Apply Infrastructure
+        run: terraform apply -auto-approve -input=false -var-file=${{ vars.ENVIRONMENT_STAGE }}.tfvars 
 
-      - name: Destroy Infrastructure
-        run: terraform destroy -auto-approve -input=false -var-file=${{ vars.ENVIRONMENT_STAGE }}.tfvars   
+      # - name: Destroy Infrastructure
+      #   run: terraform destroy -auto-approve -input=false -var-file=${{ vars.ENVIRONMENT_STAGE }}.tfvars   
 
       # - name: Verify EKS Cluster Nodes
       #   run: |
