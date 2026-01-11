@@ -34,18 +34,18 @@ variable "ec2_types" {
 variable "access_principals" {
   type = list(object({
     principal_arn = string
-    policy_arn    = string
+    access_level  = string               # cluster-admin | admin | view
     namespaces    = optional(list(string), [])
   }))
 }
 
-variable "access_level" {
-  type    = string
-  default = "view"
-}
+# variable "access_level" {
+#   type    = string
+#   default = "view"
+# }
 
-# Leave empty for cluster-wide access, or set namespaces for namespace-scoped access
-variable "namespaces" {
-  type    = list(string)
-  default = []
-}
+# # Leave empty for cluster-wide access, or set namespaces for namespace-scoped access
+# variable "namespaces" {
+#   type    = list(string)
+#   default = []
+# }
