@@ -1,5 +1,5 @@
 resource "aws_eks_access_entry" "principal" {
-  for_each = var.access_principals
+  for_each      = var.access_principals
   cluster_name  = local.eks_cluster_name
   principal_arn = each.value.principal_arn
   type          = "STANDARD"
