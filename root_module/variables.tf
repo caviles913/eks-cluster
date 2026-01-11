@@ -45,9 +45,9 @@ variable "root_eks_access_principals" {
     namespaces    = optional(list(string), [])
   }))
 }
-variable "root_access_level" {
-  type = string
-}
+# variable "root_access_level" {
+#   type = string
+# }
 
 variable "root_namespaces" {
   type = list(string)
