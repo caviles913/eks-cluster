@@ -34,10 +34,6 @@ variable "root_ec2_instance_types" {
   type = list(string)
 }
 
-# variable "root_iam_user_name" {
-#   type = string
-# }
-
 variable "root_eks_access_principals" {
   type = list(object({
     principal_arn = string
@@ -45,13 +41,6 @@ variable "root_eks_access_principals" {
     namespaces    = optional(list(string), [])
   }))
 }
-# variable "root_access_level" {
-#   type = string
-# }
-
-# variable "root_namespaces" {
-#   type = list(string)
-# }
 
 #############################
 variable "root_db_instance_class" {
