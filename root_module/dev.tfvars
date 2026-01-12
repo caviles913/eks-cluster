@@ -13,7 +13,7 @@ root_eks_access_principals = [
   {
     principal_arn = "arn:aws:iam::585412048804:role/github-actions-application-cicd-iam-role-dev"
     access_level  = "cluster-admin"
-    
+
   }
 ]
 

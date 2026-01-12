@@ -22,7 +22,7 @@ module "eks_cluster" {
   aws_node_group_role_name = var.root_aws_node_group_role_name
   ec2_types                = var.root_ec2_instance_types
   access_principals        = var.root_eks_access_principals
-  
+
 }
 
 module "rds_instance" {
