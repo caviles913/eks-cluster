@@ -18,7 +18,7 @@ root_eks_access_principals = [
     # namespaces    = ["default", "apps"]
   }
 ]
-root_namespaces = []
+
 
 root_aws_node_group_name      = "dev-node-group"
 root_aws_node_group_role_name = "dev-node-group-role"

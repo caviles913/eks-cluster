@@ -41,7 +41,7 @@ variable "root_ec2_instance_types" {
 variable "root_eks_access_principals" {
   type = list(object({
     principal_arn = string
-    policy_arn    = string
+    access_level  = string # cluster-admin | admin | view
     namespaces    = optional(list(string), [])
   }))
 }
