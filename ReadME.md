@@ -1,1 +1,1 @@
-add the security group of the worker nodes to RDS for inbound
+add the security group of the worker nodes to RDS for inbound using terraform
